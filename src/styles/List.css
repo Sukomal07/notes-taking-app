@@ -1,0 +1,84 @@
+.listContainer {
+  width: 20%;
+  overflow: hidden;
+}
+
+.listContainer > h3 {
+  padding: 15px;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.createNote {
+  padding: 15px 0px 40px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.createNote > button {
+  border: 0;
+  outline: 0;
+  background-color: black;
+  color: white;
+  padding: 8px 30px;
+  font-size: 17px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+.notesGroup {
+  height: 100%;
+  padding: 0px 0px 30px 0px;
+}
+
+.notesGroup > ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 0px 50px 20px;
+  overflow-y: auto;
+}
+.notesGroup > ul > li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+.active {
+  background-color: #f7ecdc;
+  border-radius: 15px 0px 0px 15px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.notesGroup > ul > li > p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
