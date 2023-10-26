@@ -1,0 +1,135 @@
+.model {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00000070;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.model-content {
+  position: relative;
+  width: 500px;
+  height: 230px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+.close {
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  right: 3%;
+  top: 1%;
+}
+.model-content > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.model-content > form > h1 {
+  font-size: 25px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.groupName,
+.groupColor {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.groupName,
+.groupColor > label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.groupName > input {
+  border: 1px solid #cccccc;
+  outline: none;
+  padding: 7px 15px;
+  width: 60%;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+}
+.colors {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.colors > span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.selected {
+  border: 2px solid black;
+}
+.model-content > form > button {
+  width: fit-content;
+  position: absolute;
+  right: 6%;
+  bottom: 6%;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 7px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .model {
+    padding: 0px 20px;
+  }
+  .model-content {
+    width: 100%;
+    height: 300px;
+  }
+  .close {
+    top: 3%;
+  }
+  .model-content > form {
+    gap: 1rem;
+  }
+  .model-content > form > h1 {
+    font-size: 20px;
+  }
+  .inputContainer {
+    gap: 15px;
+  }
+  .groupName,
+  .groupColor {
+    flex-direction: column;
+    align-items: normal;
+    gap: 15px;
+  }
+  .groupName > input {
+    padding: 10px 15px;
+    width: 100%;
+  }
+  .colors {
+    gap: 15px;
+  }
+  .colors > span {
+    width: 35px;
+    height: 35px;
+  }
+  .model-content > form > button {
+    position: static;
+    width: 60%;
+    margin: 0 auto;
+  }
+}

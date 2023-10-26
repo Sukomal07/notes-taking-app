@@ -1,5 +1,5 @@
 .notesContainer {
-  width: 80%;
+  width: 75%;
   height: 100vh;
   background-color: #f7ecdc;
   display: flex;
@@ -42,4 +42,12 @@
 }
 .privacy > img {
   width: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+  .notesContainer {
+    display: none;
+    width: 0;
+    height: 0;
+  }
 }
