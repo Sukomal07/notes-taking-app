@@ -1,4 +1,4 @@
-.notesContainer {
+.banner {
   width: 75%;
   height: 100vh;
   background-color: #f7ecdc;
@@ -42,12 +42,4 @@
 }
 .privacy > img {
   width: 13px;
-}
-
-@media only screen and (max-width: 768px) {
-  .notesContainer {
-    display: none;
-    width: 0;
-    height: 0;
-  }
 }

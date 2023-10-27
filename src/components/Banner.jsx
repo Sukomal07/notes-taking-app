@@ -1,10 +1,10 @@
-import "../styles/NotesContainer.css"
+import "../styles/Banner.css"
 import pocketNotesImg from '../assets/pocket-notes.png'
 import lockImage from '../assets/lockImage.png'
 
-function NotesContainer() {
+function Banner() {
     return (
-        <div className="notesContainer">
+        <div className="banner">
             <div className="preview">
                 <div className="details">
                     <img src={pocketNotesImg} alt="image" />
@@ -20,4 +20,4 @@ function NotesContainer() {
     )
 }
 
-export default NotesContainer
+export default Banner
