@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 import CreateNotes from "../components/CreateNotes";
 import "../styles/Home.css"
 import Banner from "../components/Banner";
+import NotesContainer from "../components/NotesContainer";
 
 function Home() {
     const [open, setOpen] = useState(false);
     const [groups, setGroups] = useState([]);
+    const [selectedGroup, setSelectedGroup] = useState(null);
 
     const getGroupsFromLocalStorage = () => {
         const storedGroups = JSON.parse(localStorage.getItem("groups")) || [];
         setGroups(storedGroups);
     };
 
+    const handleListClick = (group) => {
+        setSelectedGroup(group);
+    };
 
     useEffect(() => {
         getGroupsFromLocalStorage();
@@ -26,17 +31,23 @@ function Home() {
                     </div>
                     <ul>
                         {groups.map((group, index) => (
-                            <li key={index}>
+                            <li
+                                key={index}
+                                className={group === selectedGroup ? "active" : ""}
+                                onClick={() => handleListClick(group)}
+                            >
                                 <div className="logo" style={{ backgroundColor: group?.color }}>
                                     <span>{group?.groupname?.split(" ").map(word => word[0]).join('')}</span>
                                 </div>
-                                <p>{group?.groupname}</p>
+                                <p className="title">{group?.groupname}</p>
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
-            <Banner />
+            {selectedGroup ? (
+                <NotesContainer selectedGroup={selectedGroup} />
+            ) : <Banner />}
             {open && <CreateNotes setOpen={setOpen} />}
         </div>
     )
