@@ -30,7 +30,9 @@ function CreateNotes({ setOpen }) {
         }
 
         if (groupName && selectedColor) {
+            const uniqueNoteId = `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
             const newGroup = {
+                id: uniqueNoteId,
                 groupname: groupName,
                 color: selectedColor,
                 groupnotes: [],

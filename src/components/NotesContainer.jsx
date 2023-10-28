@@ -4,7 +4,7 @@ import backIcon from '../assets/backIcon.png'
 import { useState } from "react";
 
 function NotesContainer({ selectedGroup }) {
-    const { groupname, color, groupnotes } = selectedGroup || {};
+    const { id, groupname, color, groupnotes } = selectedGroup || {};
     const [noteText, setNoteText] = useState("");
 
     const handleChange = (e) => {
@@ -31,7 +31,7 @@ function NotesContainer({ selectedGroup }) {
 
             const existingGroups = JSON.parse(localStorage.getItem('groups')) || [];
             const updatedGroups = existingGroups.map((group) => {
-                if (group.groupname === groupname) {
+                if (group.id === id) {
                     groupnotes.push(newNote)
                     group.groupnotes.push(newNote);
                 }
