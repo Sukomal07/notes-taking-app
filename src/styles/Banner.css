@@ -43,3 +43,9 @@
 .privacy > img {
   width: 13px;
 }
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    display: none;
+  }
+}
