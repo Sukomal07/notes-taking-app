@@ -130,4 +130,7 @@
   .banner {
     display: none;
   }
+  .listContainer.hidden {
+    display: none;
+  }
 }

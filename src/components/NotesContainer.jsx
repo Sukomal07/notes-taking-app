@@ -3,7 +3,7 @@ import send from "../assets/send.png";
 import backIcon from '../assets/backIcon.png'
 import { useState } from "react";
 
-function NotesContainer({ selectedGroup }) {
+function NotesContainer({ selectedGroup, setListContainerHidden, isListContainerHidden }) {
     const { id, groupname, color, groupnotes } = selectedGroup || {};
     const [noteText, setNoteText] = useState("");
 
@@ -46,9 +46,9 @@ function NotesContainer({ selectedGroup }) {
 
 
     return (
-        <div className="note-container">
+        <div className={`note-container ${isListContainerHidden ? "" : "hidden"}`}>
             <nav>
-                <img src={backIcon} alt="image" />
+                <img src={backIcon} alt="image" onClick={() => setListContainerHidden(!isListContainerHidden)} />
                 <div className="logo" style={{ backgroundColor: color }}>
                     <span>{groupname.split(" ").map((word) => word[0]).join("")}</span>
                 </div>

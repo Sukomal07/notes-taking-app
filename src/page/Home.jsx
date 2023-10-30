@@ -8,6 +8,7 @@ function Home() {
     const [open, setOpen] = useState(false);
     const [groups, setGroups] = useState([]);
     const [selectedGroup, setSelectedGroup] = useState(null);
+    const [isListContainerHidden, setListContainerHidden] = useState(false);
 
     const getGroupsFromLocalStorage = () => {
         const storedGroups = JSON.parse(localStorage.getItem("groups")) || [];
@@ -15,6 +16,7 @@ function Home() {
     };
 
     const handleListClick = (group) => {
+        setListContainerHidden(true);
         setSelectedGroup(group);
     };
 
@@ -23,7 +25,7 @@ function Home() {
     }, [open]);
     return (
         <div className="homeContainer">
-            <div className="listContainer">
+            <div className={`listContainer ${isListContainerHidden ? "hidden" : ""}`}>
                 <h3>Pocket Notes</h3>
                 <div className="notesGroup">
                     <div className="createNote">
@@ -46,7 +48,7 @@ function Home() {
                 </div>
             </div>
             {selectedGroup ? (
-                <NotesContainer selectedGroup={selectedGroup} />
+                <NotesContainer selectedGroup={selectedGroup} setListContainerHidden={setListContainerHidden} isListContainerHidden={isListContainerHidden} />
             ) : <Banner />}
             {open && <CreateNotes setOpen={setOpen} />}
         </div>
